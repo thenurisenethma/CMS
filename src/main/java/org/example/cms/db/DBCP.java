@@ -23,15 +23,15 @@ public class DBCP implements ServletContextListener {
         ServletContext sc = sce.getServletContext();
         sc.setAttribute("dataSource", dataSource);
     }
+
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
         try {
             ServletContext sc = sce.getServletContext();
-            BasicDataSource dataSource = (BasicDataSource) sc.getAttribute("ds");
+            BasicDataSource dataSource = (BasicDataSource) sc.getAttribute("dataSource");
             dataSource.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
     }
 }

@@ -15,7 +15,7 @@
             height: 90vh;
             display: flex;
             padding: 20px;
-            background-color: #ace2fb;
+            background-color: lavender;
             border-radius: 5%;
             width: 45vw;
             border: double white;
@@ -30,10 +30,10 @@
             left: 60vw;
         }
         h2{
-            color: #00735B;
+            color: #b419fc;
         }
         body{
-            background-color: #00735B;
+            background-color: white;
         }
     </style>
 </head>

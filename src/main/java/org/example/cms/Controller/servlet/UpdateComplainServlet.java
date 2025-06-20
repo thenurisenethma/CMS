@@ -17,7 +17,7 @@ public class UpdateComplainServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         int id = Integer.parseInt(req.getParameter("id"));
         String complain = req.getParameter("complain");
-        BasicDataSource ds = (BasicDataSource) req.getServletContext().getAttribute("ds");
+        BasicDataSource ds = (BasicDataSource) req.getServletContext().getAttribute("dataSource");
 
         try {
             boolean updated = ComplainModel.updateComplaint(new ComplainDTO(id, complain), ds);

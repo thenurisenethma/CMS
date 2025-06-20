@@ -11,11 +11,11 @@
   <title>Admin Dashboard</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <style>
-    h2 {
-      color: #00735B;
+    h3 {
+      color: #B419FC;
     }
     .bkcolor {
-      background-color: #00735B;
+      background-color: lavender;
     }
     #navbarNavDropdown {
       padding-left: 50vw;
@@ -35,7 +35,7 @@
       <ul class="navbar-nav">
         <li class="nav-item"><a class="nav-link active" href="admin">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="logIn.jsp">LogIn</a></li>
-        <li class="nav-item"><a class="nav-link" href="index.jsp">SignIn</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.jsp">SignUp</a></li>
       </ul>
     </div>
   </div>
@@ -59,27 +59,30 @@
     <tr>
       <td><%= c.getId() %></td>
       <td><%= c.getComplain() %></td>
-      <td><%= c.getStatus() != null ? c.getStatus() : "" %>
+      <td>
+        <div><%= c.getStatus() != null ? c.getStatus() : "" %></div>
 
         <form action="updateStatus" method="post" style="display:inline;">
           <input type="hidden" name="id" value="<%= c.getId() %>">
           <input type="text" name="status" value="<%= c.getStatus() != null ? c.getStatus() : "" %>" placeholder="Status" required>
           <button type="submit" class="btn btn-sm btn-primary">Update</button>
         </form>
-        <form action="delete" method="post" style="display:inline;">
+
+        <form action="admin/delete" method="post" style="display:inline;">
           <input type="hidden" name="id" value="<%= c.getId() %>">
-          <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+          <button type="submit" class="btn btn-danger btn-sm">Delete</button>
         </form>
       </td>
     </tr>
-
     <%
       }
     } else {
     %>
+    <tr><td colspan="3" class="text-center">No complaints found.</td></tr>
     <%
       }
     %>
+
     </tbody>
   </table>
 </div>

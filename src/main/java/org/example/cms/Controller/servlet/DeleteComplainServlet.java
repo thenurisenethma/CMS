@@ -15,7 +15,7 @@ public class DeleteComplainServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         int id = Integer.parseInt(req.getParameter("id"));
-        BasicDataSource ds = (BasicDataSource) req.getServletContext().getAttribute("ds");
+        BasicDataSource ds = (BasicDataSource) req.getServletContext().getAttribute("dataSource");
 
         try {
             boolean deleted = ComplainModel.deleteComplaint(id, ds);

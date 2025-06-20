@@ -17,7 +17,7 @@ import java.util.List;
 public class AdminServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        BasicDataSource ds = (BasicDataSource) req.getServletContext().getAttribute("ds");
+        BasicDataSource ds = (BasicDataSource) req.getServletContext().getAttribute("dataSource");
         try {
             List<ComplainDTO> complaints = ComplainModel.getAllComplaints(ds);
             req.setAttribute("complaints", complaints);

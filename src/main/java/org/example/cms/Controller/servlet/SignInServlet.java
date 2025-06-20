@@ -39,7 +39,7 @@ public class SignInServlet extends HttpServlet {
                     resp.sendError(HttpServletResponse.SC_UNAUTHORIZED);
                 }
             } else {
-                resp.sendRedirect(req.getContextPath() + "/signin.jsp?error=save_failed");
+                resp.sendRedirect(req.getContextPath() + "/index.jsp?error=save_failed");
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);

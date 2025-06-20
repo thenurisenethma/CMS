@@ -16,7 +16,7 @@
       height: 90vh;
       display: flex;
       padding: 20px;
-      background-color: #ace2fb;
+      background-color: lavender;
       border-radius: 5%;
       width: 45vw;
       border: double white;
@@ -28,16 +28,16 @@
       left: 60vw;
     }
     h2{
-      color: #00735B;
+      color: #B419FC;
     }
     body{
-      background-color: #00735B;
+      background-color: white;
     }
   </style>
 </head>
 <body>
 <form class="row g-3 needs-validation" action="signin" method="post" novalidate>
-  <h2>SIGN IN</h2>
+  <h2>SIGN UP</h2>
 
   <div class="col-md-4 position-relative">
     <input type="text" class="form-control" id="validationTooltip01" name="firstName" placeholder="First Name" required>
@@ -72,7 +72,7 @@
   </div>
 
   <div class="col-12">
-    <button class="btn btn-primary" type="submit">Sign In</button>
+    <button class="btn btn-primary" type="submit">Sign Up</button>
   </div>
   <a href="logIn.jsp">  <p>Already have an Account?</p></a>
 </form>

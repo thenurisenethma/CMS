@@ -11,7 +11,6 @@ import org.example.cms.dto.ComplainDTO;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.List;
 
 @WebServlet("/create")
 public class CreateComplainServlet extends HttpServlet {
@@ -21,7 +20,7 @@ public class CreateComplainServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String complain = req.getParameter("complain");
-        BasicDataSource ds = (BasicDataSource) req.getServletContext().getAttribute("ds");
+        BasicDataSource ds = (BasicDataSource) req.getServletContext().getAttribute("dataSource");
 
         try {
             boolean isSave = ComplainModel.saveComplain(new ComplainDTO(complain), ds);

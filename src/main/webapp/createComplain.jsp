@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <style>
         .bkcolor {
-            background-color: #00735B;
+            background-color: lavender;
         }
         #navbarNavDropdown{
             padding-left: 50vw;
@@ -18,12 +18,14 @@
             border-radius: 10px;
         }
         #complain {
-            border-color: #00735b;
+            border-color:#B419FC;
         }
         .save {
-            background-color: greenyellow;
+            background-color: #ace2fb;
             width: 8vw;
         }
+        h3{color: #B419FC}
+
     </style>
 </head>
 <body>
@@ -32,10 +34,10 @@
         <h3>Add Complaint</h3>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link active" href="employee.jsp">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="employee">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="createComplain.jsp">Add Complaint</a></li>
                 <li class="nav-item"><a class="nav-link" href="logIn.jsp">LogIn</a></li>
-                <li class="nav-item"><a class="nav-link" href="signin.jsp">SignIn</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.jsp">SignUp</a></li>
             </ul>
         </div>
     </div>
@@ -49,6 +51,7 @@
         </div>
         <button type="submit" class="btn btn-light btn-sm save">Save</button>
     </form>
+
 </div>
 
 </body>

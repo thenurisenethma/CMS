@@ -9,10 +9,13 @@
     <title>Employee Dashboard</title>
 <style>
     .bkcolor {
-        background-color: #00735B;
+        background-color: lavender;
     }
     #navbarNavDropdown{
         padding-left: 50vw;
+    }
+    h3{
+        color: #B419FC;
     }
 </style>
 </head>
@@ -29,7 +32,7 @@
                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="employee">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="createComplain.jsp">Add Complain</a></li>
                 <li class="nav-item"><a class="nav-link" href="logIn.jsp">LogIn</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.jsp">SignIn</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.jsp">SignUp</a></li>
                 </li>
             </ul>
         </div>
