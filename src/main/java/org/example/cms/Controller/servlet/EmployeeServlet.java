@@ -1,5 +1,6 @@
-package org.example.cms.servlet;
+package org.example.cms.Controller.servlet;
 
+import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -10,21 +11,23 @@ import org.example.cms.dto.ComplainDTO;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
-@WebServlet("/update")
-public class UpdateComplainServlet extends HttpServlet {
+@WebServlet("/employee")
+public class EmployeeServlet extends HttpServlet {
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        int id = Integer.parseInt(req.getParameter("id"));
-        String complain = req.getParameter("complain");
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         BasicDataSource ds = (BasicDataSource) req.getServletContext().getAttribute("ds");
 
+        List<ComplainDTO> complaints = null;
         try {
-            boolean updated = ComplainModel.updateComplaint(new ComplainDTO(id, complain), ds);
-            resp.sendRedirect("employee");
+            complaints = ComplainModel.getAllComplaints(ds);
+            req.setAttribute("complaints", complaints);
+            req.getRequestDispatcher("employee.jsp").forward(req, resp);
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+
     }
 }
-

@@ -1,4 +1,4 @@
-package org.example.cms.servlet;
+package org.example.cms.Controller.servlet;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -13,21 +13,18 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet("/employee")
-public class EmployeeServlet extends HttpServlet {
+@WebServlet("/admin")
+public class AdminServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         BasicDataSource ds = (BasicDataSource) req.getServletContext().getAttribute("ds");
-
-        List<ComplainDTO> complaints = null;
         try {
-            complaints = ComplainModel.getAllComplaints(ds);
+            List<ComplainDTO> complaints = ComplainModel.getAllComplaints(ds);
             req.setAttribute("complaints", complaints);
-            req.getRequestDispatcher("employee.jsp").forward(req, resp);
-
+            req.getRequestDispatcher("admin.jsp").forward(req, resp);
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new ServletException(e);
         }
-
     }
 }
+
